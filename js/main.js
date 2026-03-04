@@ -69,7 +69,7 @@
 
   function handleSubmit(form) {
     const data = new FormData(form);
-    const mode = (data.get("mode") || "").toString().trim();
+    const cargo = (data.get("cargo") || "").toString().trim();
     const from = (data.get("from") || "").toString().trim();
     const to = (data.get("to") || "").toString().trim();
     const name = (data.get("name") || "").toString().trim();
@@ -77,7 +77,7 @@
     const email = (data.get("email") || "").toString().trim();
 
     const errors = [];
-    if (mode === "" && form.querySelector('select[name="mode"]')) errors.push("Выберите вид транспорта.");
+    if (cargo.length < 2) errors.push("Укажите груз.");
     if (from.length < 3) errors.push("Укажите адрес отправления.");
     if (to.length < 3) errors.push("Укажите адрес доставки.");
     if (name.length < 2) errors.push("Укажите имя.");
@@ -127,4 +127,5 @@
       if (callbackModal) closeModal();
     });
   }
+
 })();
