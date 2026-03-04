@@ -444,3 +444,13 @@ input:focus, select:focus{box-shadow:var(--focus); border-color: rgba(45,108,223
   color:rgba(255,255,255,0.85);
   font-size:13px;
 }
+select {
+  background: rgba(12,18,32,0.95);
+  color: #fff;
+  border: 1px solid var(--line);
+}
+
+select option {
+  background: #0c1220;
+  color: #fff;
+}
