@@ -427,4 +427,20 @@ input:focus, select:focus{box-shadow:var(--focus); border-color: rgba(45,108,223
   .nav__list.is-open{display:flex}
   .hero__text h1{font-size:34px}
   .form__row--2{grid-template-columns: 1fr}
+
+}
+.submodes{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.submodes__link{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  padding:10px 12px;
+  border-radius:999px;
+  color:rgba(255,255,255,0.85);
+  font-size:13px;
 }
