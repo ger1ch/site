@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Автомобильные перевозки — TransitLine</title>
+  <meta name="description" content="Автомобильные перевозки: организация, преимущества, услуги. Заказать перевозку." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__row">
+      <span>ПН–ПТ: 9:00–18:00</span>
+      <a href="mailto:info@transitline.example">info@transitline.example</a>
+    </div>
+  </div>
+
+  <header class="header header--inner">
+    <div class="container header__row">
+      <a class="brand" href="../index.html" aria-label="На главную">
+        <svg class="brand__logo" width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="Логотип">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D6CDF"/><stop offset="1" stop-color="#12B886"/></linearGradient></defs>
+          <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)"/>
+          <path d="M18 36c10-2 14-14 28-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M18 44c12 0 18-10 28-10" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+          <circle cx="46" cy="20" r="3.5" fill="#fff"/>
+        </svg>
+        <span class="brand__text"><span class="brand__name">TransitLine</span><span class="brand__tag">логистика без лишнего</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Навигация">
+        <ul class="nav__list nav__list--inner">
+          <li><a href="../index.html#modes">Виды транспорта</a></li>
+          <li><a href="../index.html#order">Заявка</a></li>
+          <li><a href="../index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__cta">
+        <a class="phone" href="tel:+74951234567">+7 (495) 123-45-67</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="crumbs">
+        <a href="../index.html">Главная</a> <span>→</span> <span>Автомобильный транспорт</span>
+      </div>
+
+      <div class="page">
+        <div class="page__content">
+          <h1>Автомобильные перевозки</h1>
+          <p class="lead">
+            Автотранспорт подходит, когда нужна гибкость: разные типы машин, удобные окна погрузки,
+            доставка напрямую на склад или объект.
+          </p>
+
+          <h2>Как мы организуем перевозку</h2>
+          <ol class="list">
+            <li>Собираем исходные данные: маршрут, сроки, особенности груза.</li>
+            <li>Подбираем тип транспорта и схему доставки (в т.ч. “до двери”).</li>
+            <li>Фиксируем стоимость и сроки, согласуем документы.</li>
+            <li>Запускаем перевозку и держим статус по ключевым этапам.</li>
+          </ol>
+
+          <h2>Преимущества и особенности</h2>
+          <ul class="list">
+            <li>Гибкий маршрут и возможность срочного выезда.</li>
+            <li>Удобно для региональных и межгородских доставок.</li>
+            <li>Прозрачная координация погрузки/разгрузки.</li>
+          </ul>
+
+          <h2>Примерный список услуг</h2>
+          <div class="chips">
+            <span class="chip">Подбор типа авто</span>
+            <span class="chip">Маршрут и тайминг</span>
+            <span class="chip">Экспедирование</span>
+            <span class="chip">Документооборот</span>
+            <span class="chip">Информирование по статусу</span>
+          </div>
+        </div>
+
+        <aside class="page__side">
+          <div class="card">
+            <h2 class="card__title">Заказать перевозку</h2>
+            <p class="card__subtitle">Оставьте контакты — вернёмся с расчётом.</p>
+
+            <form class="form js-quickForm" novalidate>
+              <input type="hidden" name="mode" value="Автомобильный" />
+              <label class="field"><span class="field__label">Откуда</span><input name="from" type="text" required /></label>
+              <label class="field"><span class="field__label">Куда</span><input name="to" type="text" required /></label>
+              <label class="field"><span class="field__label">Имя</span><input name="name" type="text" required /></label>
+              <label class="field"><span class="field__label">Телефон</span><input name="phone" type="tel" required /></label>
+              <label class="field"><span class="field__label">Email</span><input name="email" type="email" required /></label>
+              <button class="btn btn--primary btn--wide" type="submit">Отправить</button>
+              <p class="fine">Без кейсов и “портфолио” — только нужная информация.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer footer--inner">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__name">TransitLine</span><span class="footer__small">Логистика и перевозки</span></div>
+        <ul class="footer__contacts">
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:info@transitline.example">info@transitline.example</a></li>
+          <li>Москва, ул. Примерная, 10</li>
+        </ul>
+      </div>
+      <div><h3 class="footer__title">Соцсети</h3><div class="social"><a href="#">VK</a><a href="#">TG</a><a href="#">YT</a></div></div>
+      <div><h3 class="footer__title">Юридическая информация</h3><p class="footer__text">© <span id="year"></span> TransitLine. Не оферта.</p></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
