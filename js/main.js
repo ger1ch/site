@@ -70,7 +70,6 @@
   function handleSubmit(form) {
     const data = new FormData(form);
     const cargo = (data.get("cargo") || "").toString().trim();
-    const transportType = (data.get("transport_type") || "").toString().trim();
     const from = (data.get("from") || "").toString().trim();
     const to = (data.get("to") || "").toString().trim();
     const name = (data.get("name") || "").toString().trim();
@@ -78,10 +77,7 @@
     const email = (data.get("email") || "").toString().trim();
 
     const errors = [];
-    if (transportType === "" && form.querySelector('select[name="transport_type"]')) {
-      errors.push("Выберите тип транспорта.");
-    }
-    if (cargo.length < 2 && form.querySelector('input[name="cargo"]')) {
+    if (cargo.length < 2) {
       errors.push("Укажите груз.");
     }
     if (from.length < 3) errors.push("Укажите адрес отправления.");
@@ -135,4 +131,5 @@
   }
 
 })();
+
 
