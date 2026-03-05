@@ -87,20 +87,13 @@
           <form class="form" id="orderForm" novalidate>
             <div class="form__row">
               <label class="field">
-                <span class="field__label">Тип транспорта</span>
-                <select name="transport_type" required>
-                  <option value="" selected disabled>Выберите…</option>
-                  <option value="Манипуляторы">Манипуляторы</option>
-                  <option value="Эвакуаторы">Эвакуаторы</option>
-                  <option value="Закрытые одиночки">Закрытые одиночки</option>
-                  <option value="Открытые одиночки">Открытые одиночки</option>
-                  <option value="Еврофуры тент">Еврофуры (тент)</option>
-                  <option value="Еврофуры рефрижератор">Еврофуры (рефрижератор)</option>
-                  <option value="Открытые площадки">Открытые площадки</option>
-                  <option value="Контейнеровозы">Контейнеровозы</option>
-                  <option value="Тралы">Тралы</option>
-                  <option value="Модульные платформы">Модульные платформы</option>
-                </select>
+                <span class="field__label">Груз</span>
+                <input 
+                  type="text"
+                  name="cargo"
+                  placeholder="Например: оборудование, стройматериалы, мебель"
+                  required
+                >
               </label>
             </div>
 
@@ -303,4 +296,5 @@
 </body>
 
 </html>
+
 
