@@ -101,11 +101,14 @@ a:hover{opacity:.95}
 
 .nav__list{
   display:flex;
-  gap:16px;
+  align-items:center;
+  gap:30px;
   list-style:none;
-  padding:0; margin:0;
+  padding:0; 
+  margin:0;
 }
 .nav__list a{
+  white-space: nowrap;
   font-size:14px;
   color:var(--muted);
   padding:10px 10px;
@@ -502,3 +505,4 @@ select option {
 @media (max-width: 520px){
   .fleet__grid{grid-template-columns: 1fr;}
 }
+
