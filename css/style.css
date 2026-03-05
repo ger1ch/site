@@ -515,4 +515,21 @@ select option {
   line-height: 1.7;
 }
 
+#about{
+  max-width:900px;
+  margin:0 auto;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background: rgba(255,255,255,0.04);
+}
+
+#about h2{
+  margin-bottom:18px;
+}
+
+#about p{
+  margin-bottom:14px;
+  line-height:1.7;
+}
 
