@@ -554,3 +554,33 @@ select option {
   margin: 0 auto 16px;
   line-height: 1.7;
 }
+
+.reviews{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+gap:16px;
+margin-top:20px;
+}
+
+.review{
+border:1px solid var(--line);
+background: rgba(255,255,255,0.04);
+border-radius:16px;
+padding:16px;
+}
+
+.review p{
+margin:0 0 10px;
+color:var(--text);
+}
+
+.review span{
+font-size:13px;
+color:var(--muted);
+}
+
+@media (max-width: 900px){
+.reviews{
+grid-template-columns:1fr;
+}
+}
