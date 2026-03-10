@@ -132,4 +132,11 @@
 
 })();
 
+function openReview(){
+document.getElementById("reviewModal").style.display="flex";
+}
+
+function closeReview(){
+document.getElementById("reviewModal").style.display="none";
+}
 
