@@ -584,3 +584,35 @@ color:var(--muted);
 grid-template-columns:1fr;
 }
 }
+.reviews__cta{
+margin-top:20px;
+text-align:center;
+}
+
+.review-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.review-modal__content{
+background:#0b1220;
+padding:20px;
+border-radius:16px;
+border:1px solid var(--line);
+width:320px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.review-modal textarea{
+height:100px;
+resize:none;
+}
