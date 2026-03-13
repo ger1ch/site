@@ -67,35 +67,59 @@
     return String(s).replace(/[^\d+]/g, "").trim();
   }
 
-  function handleSubmit(form) {
-    const data = new FormData(form);
-    const cargo = (data.get("cargo") || "").toString().trim();
-    const from = (data.get("from") || "").toString().trim();
-    const to = (data.get("to") || "").toString().trim();
-    const name = (data.get("name") || "").toString().trim();
-    const phone = cleanPhone(data.get("phone") || "");
-    const email = (data.get("email") || "").toString().trim();
+  async function handleSubmit(form) {
+  const data = new FormData(form);
+  const cargo = (data.get("cargo") || "").toString().trim();
+  const from = (data.get("from") || "").toString().trim();
+  const to = (data.get("to") || "").toString().trim();
+  const name = (data.get("name") || "").toString().trim();
+  const phone = cleanPhone(data.get("phone") || "");
+  const email = (data.get("email") || "").toString().trim();
+  const mode = (data.get("mode") || "").toString().trim();
 
-    const errors = [];
-    if (cargo.length < 2) {
-      errors.push("Укажите груз.");
+  const errors = [];
+  if (!mode && cargo.length < 2) errors.push("Укажите груз.");
+  if (from.length < 3) errors.push("Укажите адрес отправления.");
+  if (to.length < 3) errors.push("Укажите адрес доставки.");
+  if (name.length < 2) errors.push("Укажите имя.");
+  if (phone.length < 7) errors.push("Укажите корректный телефон.");
+  if (!isValidEmail(email)) errors.push("Укажите корректный email.");
+
+  if (errors.length) {
+    showToast(errors[0]);
+    return;
+  }
+
+  try {
+    const response = await fetch("https://site.kremerg475.workers.dev", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        cargo,
+        from,
+        to,
+        name,
+        phone,
+        email,
+        mode
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || "Ошибка отправки");
     }
-    if (from.length < 3) errors.push("Укажите адрес отправления.");
-    if (to.length < 3) errors.push("Укажите адрес доставки.");
-    if (name.length < 2) errors.push("Укажите имя.");
-    if (phone.length < 7) errors.push("Укажите корректный телефон.");
-    if (!isValidEmail(email)) errors.push("Укажите корректный email.");
 
-    if (errors.length) {
-      showToast(errors[0]);
-      return;
-    }
-
-    // Статический сайт: просто показываем успех.
-    // Если нужен сервер — замените на fetch() к вашему endpoint.
     form.reset();
     showToast("Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+  } catch (error) {
+    console.error(error);
+    showToast("Не удалось отправить заявку. Попробуйте позже.");
   }
+}
 
   // Main order form
   const orderForm = $("#orderForm");
@@ -139,4 +163,5 @@ document.getElementById("reviewModal").style.display="flex";
 function closeReview(){
 document.getElementById("reviewModal").style.display="none";
 }
+
 
