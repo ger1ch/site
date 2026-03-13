@@ -365,7 +365,18 @@ input:focus, select:focus{box-shadow:var(--focus); border-color: rgba(45,108,223
 }
 
 .legal_info {
-  text-align: left;
+  display: flex;
+  flex-wrap: wrap; /* Разрешает перенос элементов */
+  justify-content: space-between; /* Распределяет элементы по всей ширине */
+  width: 100%; /* Занимает всю доступную ширину */
+  gap: 20px; /* Пробелы между элементами */
+}
+
+.info-item {
+  flex: 1 1 200px; /* Каждый элемент может растягиваться, но не меньше 200px */
+  font-size: 14px; /* Размер шрифта */
+  color: var(--muted); /* Цвет текста */
+  margin: 0; /* Убираем маргины */
 }
 
 .legal_info h3 {
