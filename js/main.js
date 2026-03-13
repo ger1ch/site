@@ -3,11 +3,14 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   // Year
-  $$("#year").forEach(el => el.textContent = new Date().getFullYear());
+  $$("#year").forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
 
   // Mobile nav
   const navToggle = $("#navToggle");
   const navList = $("#navList");
+
   if (navToggle && navList) {
     navToggle.addEventListener("click", () => {
       const open = navList.classList.toggle("is-open");
@@ -25,6 +28,7 @@
   // Toast helper
   const toast = $("#toast");
   let toastTimer = null;
+
   function showToast(message) {
     if (!toast) return;
     toast.textContent = message;
@@ -36,12 +40,14 @@
   // Modal
   const callbackBtn = $("#callbackBtn");
   const callbackModal = $("#callbackModal");
+
   function openModal() {
     if (!callbackModal) return;
     callbackModal.classList.add("is-open");
     callbackModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   }
+
   function closeModal() {
     if (!callbackModal) return;
     callbackModal.classList.remove("is-open");
@@ -51,11 +57,17 @@
 
   if (callbackBtn && callbackModal) {
     callbackBtn.addEventListener("click", openModal);
+
     callbackModal.addEventListener("click", (e) => {
-      if (e.target.matches("[data-close]") || e.target.closest("[data-close]")) closeModal();
+      if (e.target.matches("[data-close]") || e.target.closest("[data-close]")) {
+        closeModal();
+      }
     });
+
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && callbackModal.classList.contains("is-open")) closeModal();
+      if (e.key === "Escape" && callbackModal.classList.contains("is-open")) {
+        closeModal();
+      }
     });
   }
 
@@ -63,105 +75,148 @@
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).trim());
   }
+
   function cleanPhone(s) {
     return String(s).replace(/[^\d+]/g, "").trim();
   }
 
-  async function handleSubmit(form) {
-  const data = new FormData(form);
-  const cargo = (data.get("cargo") || "").toString().trim();
-  const from = (data.get("from") || "").toString().trim();
-  const to = (data.get("to") || "").toString().trim();
-  const name = (data.get("name") || "").toString().trim();
-  const phone = cleanPhone(data.get("phone") || "");
-  const email = (data.get("email") || "").toString().trim();
-  const mode = (data.get("mode") || "").toString().trim();
+  // Worker URL
+  const WORKER_URL = "https://site.kremerg475.workers.dev";
 
-  const errors = [];
-  if (!mode && cargo.length < 2) errors.push("Укажите груз.");
-  if (from.length < 3) errors.push("Укажите адрес отправления.");
-  if (to.length < 3) errors.push("Укажите адрес доставки.");
-  if (name.length < 2) errors.push("Укажите имя.");
-  if (phone.length < 7) errors.push("Укажите корректный телефон.");
-  if (!isValidEmail(email)) errors.push("Укажите корректный email.");
-
-  if (errors.length) {
-    showToast(errors[0]);
-    return;
-  }
-
-  try {
-    const response = await fetch("https://site.kremerg475.workers.dev", {
+  async function sendToTelegram(payload) {
+    const response = await fetch(WORKER_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
+      body: JSON.stringify(payload)
+    });
+
+    let result = {};
+    try {
+      result = await response.json();
+    } catch (e) {
+      result = {};
+    }
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || "Ошибка отправки");
+    }
+
+    return result;
+  }
+
+  async function handleSubmit(form) {
+    const data = new FormData(form);
+    const cargo = (data.get("cargo") || "").toString().trim();
+    const from = (data.get("from") || "").toString().trim();
+    const to = (data.get("to") || "").toString().trim();
+    const name = (data.get("name") || "").toString().trim();
+    const phone = cleanPhone(data.get("phone") || "");
+    const email = (data.get("email") || "").toString().trim();
+    const mode = (data.get("mode") || "").toString().trim();
+
+    const errors = [];
+    if (!mode && cargo.length < 2) errors.push("Укажите груз.");
+    if (from.length < 3) errors.push("Укажите адрес отправления.");
+    if (to.length < 3) errors.push("Укажите адрес доставки.");
+    if (name.length < 2) errors.push("Укажите имя.");
+    if (phone.length < 7) errors.push("Укажите корректный телефон.");
+    if (!isValidEmail(email)) errors.push("Укажите корректный email.");
+
+    if (errors.length) {
+      showToast(errors[0]);
+      return;
+    }
+
+    try {
+      await sendToTelegram({
         cargo,
         from,
         to,
         name,
         phone,
         email,
-        mode
-      })
-    });
+        mode: mode || "Основная"
+      });
 
-    const result = await response.json();
-
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || "Ошибка отправки");
+      form.reset();
+      showToast("Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+    } catch (error) {
+      console.error(error);
+      showToast("Не удалось отправить заявку. Попробуйте позже.");
     }
-
-    form.reset();
-    showToast("Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
-  } catch (error) {
-    console.error(error);
-    showToast("Не удалось отправить заявку. Попробуйте позже.");
   }
-}
 
   // Main order form
   const orderForm = $("#orderForm");
   if (orderForm) {
-    orderForm.addEventListener("submit", (e) => {
+    orderForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      handleSubmit(orderForm);
+      await handleSubmit(orderForm);
     });
   }
 
   // Quick forms on transport pages
   $$(".js-quickForm").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      handleSubmit(form);
+      await handleSubmit(form);
     });
   });
 
   // Callback form
   const callbackForm = $("#callbackForm");
   if (callbackForm) {
-    callbackForm.addEventListener("submit", (e) => {
+    callbackForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const data = new FormData(callbackForm);
       const name = (data.get("name") || "").toString().trim();
       const phone = cleanPhone(data.get("phone") || "");
-      if (name.length < 2) return showToast("Укажите имя.");
-      if (phone.length < 7) return showToast("Укажите корректный телефон.");
-      callbackForm.reset();
-      showToast("Принято! Мы перезвоним вам.");
-      if (callbackModal) closeModal();
+
+      if (name.length < 2) {
+        showToast("Укажите имя.");
+        return;
+      }
+
+      if (phone.length < 7) {
+        showToast("Укажите корректный телефон.");
+        return;
+      }
+
+      try {
+        await sendToTelegram({
+          cargo: "-",
+          from: "-",
+          to: "-",
+          name,
+          phone,
+          email: "-",
+          mode: "Обратный звонок"
+        });
+
+        callbackForm.reset();
+        showToast("Принято! Мы перезвоним вам.");
+        closeModal();
+      } catch (error) {
+        console.error(error);
+        showToast("Не удалось отправить заявку. Попробуйте позже.");
+      }
     });
   }
-
 })();
 
-function openReview(){
-document.getElementById("reviewModal").style.display="flex";
+function openReview() {
+  const modal = document.getElementById("reviewModal");
+  if (modal) {
+    modal.style.display = "flex";
+  }
 }
 
-function closeReview(){
-document.getElementById("reviewModal").style.display="none";
+function closeReview() {
+  const modal = document.getElementById("reviewModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
-
-
