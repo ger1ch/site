@@ -81,7 +81,7 @@
   }
 
   // Worker URL
-  const WORKER_URL = "https://site.kremerg475.workers.dev";
+  const WORKER_URL = "https://api.tegeka.ru";
 
   async function sendToTelegram(payload) {
     const response = await fetch(WORKER_URL, {
@@ -220,3 +220,4 @@ function closeReview() {
     modal.style.display = "none";
   }
 }
+
