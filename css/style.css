@@ -366,17 +366,21 @@ input:focus, select:focus{box-shadow:var(--focus); border-color: rgba(45,108,223
 
 .legal_info {
   display: flex;
-  flex-wrap: wrap; /* Разрешает перенос элементов */
-  justify-content: space-between; /* Распределяет элементы по всей ширине */
-  width: 100%; /* Занимает всю доступную ширину */
-  gap: 20px; /* Пробелы между элементами */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Выравнивание элементов по левому краю */
+  width: 100%;
+  gap: 20px;
+  border: none; /* Убирает бордер */
+  background: transparent; /* Убирает фон */
 }
 
 .info-item {
-  flex: 1 1 200px; /* Каждый элемент может растягиваться, но не меньше 200px */
-  font-size: 14px; /* Размер шрифта */
-  color: var(--muted); /* Цвет текста */
-  margin: 0; /* Убираем маргины */
+  flex: 1 1 200px;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  white-space: nowrap;
+  text-align: left; /* Убедитесь, что текст выравнивается слева */
 }
 
 .legal_info h3 {
