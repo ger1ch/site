@@ -630,9 +630,24 @@ height:100px;
 resize:none;
 }
 
+.legal{
+margin-top:40px;
+padding:20px;
+border:1px solid var(--line);
+border-radius:var(--radius);
+background:rgba(255,255,255,0.04);
+}
 
+.legal h2{
+margin-bottom:14px;
+}
 
+.legal p{
+margin-bottom:8px;
+color:var(--muted);
+}
 
-
-
-
+.legal__note{
+margin-top:10px;
+font-size:13px;
+}
