@@ -366,7 +366,22 @@
       <div class="reviews__cta">
         <button class="btn btn--primary" onclick="openReview()">Оставить отзыв</button>
       </div>
-      <section class="section legal" id="legal">
+
+      <div class="review-modal" id="reviewModal">
+        <div class="review-modal__content">
+
+          <h3>Оставить отзыв</h3>
+
+          <input type="text" placeholder="Ваше имя">
+          <textarea placeholder="Ваш отзыв"></textarea>
+
+          <button class="btn btn--primary">Отправить</button>
+          <button class="btn btn--ghost" onclick="closeReview()">Закрыть</button>
+        </div>
+      </div>
+
+
+<section class="section legal" id="legal">
   <div class="container">
     <h2>Юридическая информация</h2>
 
@@ -389,22 +404,7 @@
   </div>
 </section>
 
-      <div class="review-modal" id="reviewModal">
-        <div class="review-modal__content">
-
-          <h3>Оставить отзыв</h3>
-
-          <input type="text" placeholder="Ваше имя">
-          <textarea placeholder="Ваш отзыв"></textarea>
-
-          <button class="btn btn--primary">Отправить</button>
-          <button class="btn btn--ghost" onclick="closeReview()">Закрыть</button>
-
-        </div>
-      </div>
-
-    <!-- Footer -->
-    <footer class="footer" id="contacts">
+<footer class="footer" id="contacts">
   <div class="container footer__grid">
     <div>
       <div class="footer__brand">
@@ -450,6 +450,7 @@
 </body>
 
 </html>
+
 
 
 
