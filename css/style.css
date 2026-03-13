@@ -66,7 +66,7 @@ gap:30px;
   align-items:center;
   justify-content:space-between;
   gap:16px;
-  min-height:76px;
+  min-height:100px;
 }
 
 .brand{
@@ -619,6 +619,7 @@ gap:10px;
 height:100px;
 resize:none;
 }
+
 
 
 
