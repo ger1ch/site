@@ -80,6 +80,7 @@ a:hover{opacity:.95}
 .brand__logo{
 flex:0 0 auto;
 height:56px;
+max-height:56px;
 width:auto;
 filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
 }
@@ -621,4 +622,5 @@ gap:10px;
 height:100px;
 resize:none;
 }
+
 
