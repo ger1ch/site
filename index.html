@@ -10,15 +10,13 @@
 </head>
 
 <body>
-  <!-- Topbar (как у примеров) -->
   <div class="topbar">
     <div class="container topbar__row">
       <span>ПН–ПТ: 9:00–18:00</span>
-      <a href="mailto:info@transitline.example">ipzaicew001@mail.ru</a>
+      <a href="mailto:ipzaicew001@mail.ru">ipzaicew001@mail.ru</a>
     </div>
   </div>
 
-  <!-- Header -->
   <header class="header" id="top">
     <div class="container header__row">
       <a class="brand" href="index.html" aria-label="На главную">
@@ -38,19 +36,18 @@
           <li><a href="#about">О компании</a></li>
           <li><a href="#stats">Показатели</a></li>
           <li><a href="#modes">Виды транспорта</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#legal">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="header__cta">
-        <a class="phone" href="tel:+74951234567" aria-label="Позвонить">+7 939 459 3294</a>
+        <a class="phone" href="tel:+79394593294" aria-label="Позвонить">+7 939 459 3294</a>
         <button class="btn btn--ghost" id="callbackBtn">Обратный звонок</button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
@@ -68,7 +65,6 @@
           <a class="btn btn--primary" href="#order">Оформить заявку</a>
         </div>
 
-        <!-- Form -->
         <div class="card" id="order">
           <h2 class="card__title">Заявка на перевозку</h2>
           <p class="card__subtitle">Заполните поля — мы свяжемся и уточним детали.</p>
@@ -77,7 +73,7 @@
             <div class="form__row">
               <label class="field">
                 <span class="field__label">Груз</span>
-                <input 
+                <input
                   type="text"
                   name="cargo"
                   placeholder="Например: оборудование, стройматериалы, мебель"
@@ -128,32 +124,33 @@
       </div>
     </section>
 
-    <!-- About -->
     <section class="section" id="about">
       <div class="container">
         <div class="section__head">
           <h2>О компании</h2>
           <p>
-            Транспортная компания <strong>ТК ТЭГЭКА</strong> специализируется на перевозке негабаритных и крупногабаритных грузов по всей территории России, включая грузоперевозки весом до 300 тонн. 
-            В нашем автопарке представлены различные виды техники: маневренные газели, фуры, машины с манипуляторами, а также тралы, модульные платформы, открытые площадки и шаланды, 
+            Транспортная компания <strong>ТК ТЭГЭКА</strong> специализируется на перевозке негабаритных и крупногабаритных грузов по всей территории России, включая грузоперевозки весом до 300 тонн.
+            В нашем автопарке представлены различные виды техники: маневренные газели, фуры, машины с манипуляторами, а также тралы, модульные платформы, открытые площадки и шаланды,
             что позволяет подобрать оптимальное решение для транспортировки практически любого типа груза.
           </p>
 
           <p>
             Осуществляем перевозки как по городу, так и между регионами с максимальной оперативностью и надежностью.
           </p>
-          
+
           <p>
             Мы предоставляем полный комплекс услуг, включая оформление всей необходимой документации на перевозку, получение специальных разрешений,
             а также услуги сюрвея — тщательной проработки маршрута для обеспечения максимальной безопасности и оптимизации времени доставки.
           </p>
-          
+
           <p>
             Помимо транспортировки, выполняем такелажные работы и предоставляем в аренду краны для погрузочно-разгрузочных операций любой сложности.
           </p>
+
           <p>
             Контроль за грузом ведут опытные сопровождающие специалисты, обеспечивая сохранность и своевременность доставки на всех этапах перевозки.
           </p>
+
           <p>
             Мы гарантируем индивидуальный подход к каждому заказу, высокое качество сервиса и профессионализм с момента оформления заявки до успешной разгрузки.
           </p>
@@ -184,7 +181,6 @@
       </div>
     </section>
 
-    <!-- Stats (как у примеров, но без кейсов/проектов) -->
     <section class="section" id="stats">
       <div class="container">
         <div class="section__head">
@@ -216,7 +212,6 @@
       </div>
     </section>
 
-    <!-- Transport Modes -->
     <section class="section" id="modes">
       <div class="container">
         <div class="section__head">
@@ -233,175 +228,177 @@
               <span class="mode-card__link">Оставить заявку →</span>
             </div>
           </a>
-          
         </div>
       </div>
     </section>
 
-    <!-- Наш автопарк -->
-    <div class="fleet">
-  <h3 class="fleet__title">Наш автопарк</h3>
-  <p class="fleet__subtitle">Подберём технику под ваш груз и маршрут.</p>
+    <section class="section">
+      <div class="container">
+        <div class="fleet">
+          <h3 class="fleet__title">Наш автопарк</h3>
+          <p class="fleet__subtitle">Подберём технику под ваш груз и маршрут.</p>
 
-  <div class="fleet__grid">
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🚐</div>
-      <div>
-        <h4>Манипуляторы</h4>
-        <p>Погрузка/разгрузка без отдельного крана.</p>
+          <div class="fleet__grid">
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🚐</div>
+              <div>
+                <h4>Манипуляторы</h4>
+                <p>Погрузка/разгрузка без отдельного крана.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🚑</div>
+              <div>
+                <h4>Эвакуаторы</h4>
+                <p>Перевозка авто и спецтехники на платформах.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🚚</div>
+              <div>
+                <h4>Одиночки</h4>
+                <p>Закрытые/открытые — для городских и межгородских доставок.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🚛</div>
+              <div>
+                <h4>Еврофуры</h4>
+                <p>Тент / рефрижератор — под объём и температурный режим.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🏗️</div>
+              <div>
+                <h4>Открытые площадки</h4>
+                <p>Негабарит, металлоконструкции, стройматериалы.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">📦</div>
+              <div>
+                <h4>Контейнеровозы</h4>
+                <p>Перевозка контейнеров по РФ и в порты.</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🧱</div>
+              <div>
+                <h4>Тралы</h4>
+                <p>Перевозка спецтехники и тяжёлых грузов (разные типы).</p>
+              </div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card__icon">🧩</div>
+              <div>
+                <h4>Модульные платформы</h4>
+                <p>Для особо тяжёлых и нестандартных задач.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🚑</div>
-      <div>
-        <h4>Эвакуаторы</h4>
-        <p>Перевозка авто и спецтехники на платформах.</p>
-      </div>
-    </div>
+    <section class="section" id="reviews">
+      <div class="container">
+        <h2>Отзывы клиентов</h2>
 
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🚚</div>
-      <div>
-        <h4>Одиночки</h4>
-        <p>Закрытые/открытые — для городских и межгородских доставок.</p>
-      </div>
-    </div>
-
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🚛</div>
-      <div>
-        <h4>Еврофуры</h4>
-        <p>Тент / рефрижератор — под объём и температурный режим.</p>
-      </div>
-    </div>
-
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🏗️</div>
-      <div>
-        <h4>Открытые площадки</h4>
-        <p>Негабарит, металлоконструкции, стройматериалы.</p>
-      </div>
-    </div>
-
-    <div class="fleet-card">
-      <div class="fleet-card__icon">📦</div>
-      <div>
-        <h4>Контейнеровозы</h4>
-        <p>Перевозка контейнеров по РФ и в порты.</p>
-      </div>
-    </div>
-
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🧱</div>
-      <div>
-        <h4>Тралы</h4>
-        <p>Перевозка спецтехники и тяжёлых грузов (разные типы).</p>
-      </div>
-    </div>
-
-    <div class="fleet-card">
-      <div class="fleet-card__icon">🧩</div>
-      <div>
-        <h4>Модульные платформы</h4>
-        <p>Для особо тяжёлых и нестандартных задач.</p>
-      </div>
-    </div>
-  </div>
-      <section class="section" id="reviews">
-        <div class="container">
-          
-          <h2>Отзывы клиентов</h2>
-          
-          <div class="reviews">
-            <div class="review">
-              <p>"Перевозили негабаритный груз в Ростов. Всё прошло идеально, документы оформили быстро."</p>
-              <span>— Сергей, Краснодар</span>
-            </div>
-
-            <div class="review">
-              <p>"Работаем с компанией уже больше года. Всегда всё вовремя и без проблем."</p>
-              <span>— Андрей, строительная компания</span>
-            </div>
-            
-            <div class="review">
-              <p>"Перевозка тралом прошла отлично, маршрут согласовали заранее."</p>
-              <span>— Дмитрий</span>
-            </div>
-
-            <div class="review">
-              <p>"Очень оперативно нашли технику и организовали доставку."</p>
-              <span>— Игорь</span>
-            </div>
-
-            <div class="review">
-              <p>"Понравился профессиональный подход и сопровождение груза."</p>
-              <span>— Алексей</span>
-            </div>
-
-            <div class="review">
-              <p>"Перевозили оборудование. Всё приехало без повреждений."</p>
-              <span>— Михаил</span>
-            </div>
-
-            <div class="review">
-              <p>"Работают быстро и четко, будем обращаться ещё."</p>
-              <span>— Евгений</span>
-            </div>
-
-            <div class="review">
-              <p>"Отличная логистика и грамотная проработка маршрута."</p>
-              <span>— Виктор</span>
-            </div>
-
-            <div class="review">
-              <p>"Надежная транспортная компания. Рекомендую."</p>
-              <span>— Константин</span>
-            </div>
-
+        <div class="reviews">
+          <div class="review">
+            <p>"Перевозили негабаритный груз в Ростов. Всё прошло идеально, документы оформили быстро."</p>
+            <span>— Сергей, Краснодар</span>
           </div>
 
+          <div class="review">
+            <p>"Работаем с компанией уже больше года. Всегда всё вовремя и без проблем."</p>
+            <span>— Андрей, строительная компания</span>
+          </div>
+
+          <div class="review">
+            <p>"Перевозка тралом прошла отлично, маршрут согласовали заранее."</p>
+            <span>— Дмитрий</span>
+          </div>
+
+          <div class="review">
+            <p>"Очень оперативно нашли технику и организовали доставку."</p>
+            <span>— Игорь</span>
+          </div>
+
+          <div class="review">
+            <p>"Понравился профессиональный подход и сопровождение груза."</p>
+            <span>— Алексей</span>
+          </div>
+
+          <div class="review">
+            <p>"Перевозили оборудование. Всё приехало без повреждений."</p>
+            <span>— Михаил</span>
+          </div>
+
+          <div class="review">
+            <p>"Работают быстро и четко, будем обращаться ещё."</p>
+            <span>— Евгений</span>
+          </div>
+
+          <div class="review">
+            <p>"Отличная логистика и грамотная проработка маршрута."</p>
+            <span>— Виктор</span>
+          </div>
+
+          <div class="review">
+            <p>"Надежная транспортная компания. Рекомендую."</p>
+            <span>— Константин</span>
+          </div>
         </div>
-      </section>
 
-      <div class="reviews__cta">
-        <button class="btn btn--primary" onclick="openReview()">Оставить отзыв</button>
-      </div>
-
-      <div class="review-modal" id="reviewModal">
-        <div class="review-modal__content">
-
-          <h3>Оставить отзыв</h3>
-
-          <input type="text" placeholder="Ваше имя">
-          <textarea placeholder="Ваш отзыв"></textarea>
-
-          <button class="btn btn--primary">Отправить</button>
-          <button class="btn btn--ghost" onclick="closeReview()">Закрыть</button>
+        <div class="reviews__cta">
+          <button class="btn btn--primary" onclick="openReview()">Оставить отзыв</button>
         </div>
       </div>
+    </section>
 
-
-<section class="section legal" id="legal">
-  <div class="container">
-    <h2>Юридическая информация</h2>
-
-    <div class="legal_info">
-      <div class="info-item"><strong>ИНН:</strong> 231294792433</div>
-      <div class="info-item"><strong>ОГРН:</strong> 322237500274875</div>
-      <div class="info-item"><strong>Адрес:</strong> 350912, Россия, Краснодарский край, г. Краснодар, ул. им. Ярославского (тер. Пашковский жилой массив), д. 68</div>
-      <div class="info-item"><strong>Телефон:</strong> +7 939 459 3294</div>
-      <div class="info-item"><strong>Email:</strong> ipzaicew001@mail.ru</div>
+    <div class="review-modal" id="reviewModal">
+      <div class="review-modal__content">
+        <h3>Оставить отзыв</h3>
+        <input type="text" placeholder="Ваше имя">
+        <textarea placeholder="Ваш отзыв"></textarea>
+        <button class="btn btn--primary">Отправить</button>
+        <button class="btn btn--ghost" onclick="closeReview()">Закрыть</button>
+      </div>
     </div>
 
-    <p class="legal_note">
-      © <span id="year"></span> ТК ТЭГЭКА. Все права защищены. <br />
-      Информация на сайте не является публичной офертой.
-    </p>
-  </div>
-</section>
+    <section class="section legal" id="legal">
+      <div class="container">
+        <h2>Юридическая информация</h2>
 
-  <!-- Callback modal -->
+        <div class="legal_card">
+          <p><strong>ИНН:</strong> 231294792433</p>
+          <p><strong>ОГРН:</strong> 322237500274875</p>
+          <p>
+            <strong>Адрес:</strong><br>
+            350912, Россия, Краснодарский край,<br>
+            г. Краснодар, ул. им. Ярославского<br>
+            (тер. Пашковский жилой массив), д. 68
+          </p>
+          <p><strong>Телефон:</strong> +7 939 459 3294</p>
+          <p><strong>Email:</strong> ipzaicew001@mail.ru</p>
+
+          <p class="legal_note">
+            © <span id="year"></span> ТК ТЭГЭКА. Все права защищены.<br>
+            Информация на сайте не является публичной офертой.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <div class="modal" id="callbackModal" aria-hidden="true" role="dialog" aria-label="Обратный звонок">
     <div class="modal__backdrop" data-close></div>
     <div class="modal__panel" role="document">
@@ -409,41 +406,26 @@
         <h2>Заказать обратный звонок</h2>
         <button class="icon-btn" data-close aria-label="Закрыть">✕</button>
       </div>
+
       <form class="form" id="callbackForm" novalidate>
         <label class="field">
           <span class="field__label">Имя</span>
           <input name="name" type="text" placeholder="Ваше имя" required />
         </label>
+
         <label class="field">
           <span class="field__label">Телефон</span>
           <input name="phone" type="tel" placeholder="+7 ___ ___-__-__" required />
         </label>
+
         <button class="btn btn--primary btn--wide" type="submit">Жду звонка</button>
         <p class="fine">Мы перезвоним в рабочее время и уточним запрос.</p>
       </form>
     </div>
   </div>
 
-  <!-- Toast -->
   <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
 
   <script src="js/main.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
