@@ -141,7 +141,7 @@
       });
 
       form.reset();
-      showToast("Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+      window.location.href = "thank-you.html";
     } catch (error) {
       console.error(error);
       showToast("Не удалось отправить заявку. Попробуйте позже.");
@@ -197,8 +197,8 @@
         });
 
         callbackForm.reset();
-        showToast("Принято! Мы перезвоним вам.");
         closeModal();
+        window.location.href = "thank-you.html";
       } catch (error) {
         console.error(error);
         showToast("Не удалось отправить заявку. Попробуйте позже.");
@@ -220,4 +220,3 @@ function closeReview() {
     modal.style.display = "none";
   }
 }
-
