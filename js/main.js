@@ -141,7 +141,7 @@
       });
 
       form.reset();
-      window.location.href = "thank-you.html";
+      window.location.href = "/thank-you.html";
     } catch (error) {
       console.error(error);
       showToast("Не удалось отправить заявку. Попробуйте позже.");
@@ -198,7 +198,7 @@
 
         callbackForm.reset();
         closeModal();
-        window.location.href = "thank-you.html";
+        window.location.href = "/thank-you.html";
       } catch (error) {
         console.error(error);
         showToast("Не удалось отправить заявку. Попробуйте позже.");
